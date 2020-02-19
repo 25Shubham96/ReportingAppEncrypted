@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_circular"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_comment"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/progress_circular"
+        android:layout_marginEnd="10dp"
+        android:hint="status text here..."
+        tools:ignore="HardcodedText"
+        android:textSize="15sp"/>
+
+</RelativeLayout>

@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/screenback"
+    android:layout_height="match_parent">
+
+    <!--<Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tb_head"
+        android:background="@color/colorToolbar"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back_black_24dp"/>
+    </Toolbar>-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Types"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:fontFamily="serif"
+        android:layout_marginTop="5dp"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="20sp"
+                android:fontFamily="serif"
+                android:paddingTop="3sp"
+                android:text="From"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_startdatePay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20sp"
+                android:layout_toRightOf="@id/tv_from"
+                android:background="@drawable/rect_border"
+                android:fontFamily="serif"
+                android:hint="Start Date"
+                android:padding="4dp"
+                android:textColor="#fff"
+                android:textColorHint="#bdbdbd"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_from"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="10sp"
+                android:fontFamily="serif"
+                android:paddingTop="3sp"
+                android:text="To"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_enddatePay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_from"
+                android:layout_marginLeft="26sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:layout_toRightOf="@id/tv_to"
+                android:background="@drawable/rect_border"
+                android:fontFamily="serif"
+                android:hint="End Date"
+                android:padding="4dp"
+                android:textColor="#fff"
+                android:textColorHint="#bdbdbd"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_PayRefresh"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/tv_startdatePay"
+                android:src="@drawable/ic_autorenew_white_24dp" />
+
+            <TextView
+                android:id="@+id/tv_storeselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_to"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="serif"
+                android:text="Select Store No :"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spin_storeselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_enddatePay"
+                android:layout_toRightOf="@+id/tv_storeselect"
+                android:background="@drawable/background_round"
+                android:spinnerMode="dropdown">
+
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+            <TextView
+                android:id="@+id/tv_selectMonths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Month/s : "
+                android:textSize="18sp"
+                android:layout_below="@id/tv_storeselect"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:id="@+id/btn_selectMonths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:layout_below="@id/tv_storeselect"
+                android:layout_toRightOf="@+id/tv_selectMonths"
+                android:background="@drawable/rect_border"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_selectYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Pay Type/s : "
+                android:textSize="18sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/btn_selectMonths"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:id="@+id/btn_selectPayType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_below="@id/btn_selectMonths"
+                android:layout_toRightOf="@+id/tv_selectYear"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_PayMon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_selectPayType"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="serif"
+                android:text="Month wise Payment"
+                android:textColor="#fff"
+                android:textSize="17dp"
+                android:textStyle="italic" />
+
+            <ScrollView
+                android:id="@+id/sv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_PayMon"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/tl_Paytab1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true">
+
+                        <TableRow
+                            android:id="@+id/tr_Pay1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_Month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="3dp"
+                                android:text="Month"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_paymentAmt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:padding="3dp"
+                                android:text="Net Pay"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_paymentAvgAmt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:padding="3dp"
+                                android:text="Avg Pay"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_PayType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="30sp"
+                android:fontFamily="serif"
+                android:text="Types of Payment"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+
+            <ScrollView
+                android:id="@+id/sv_tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_PayType"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="20sp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/tl_Pay2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true">
+
+                        <TableRow
+                            android:id="@+id/tr_Pay2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_PayMethod"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="3dp"
+                                android:text="Pay Types"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_paymentAmt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:padding="3dp"
+                                android:text="Net Pay"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_paymentAvgAmt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:padding="3dp"
+                                android:text="Avg Pay"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btn_paymentchart"
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                android:layout_below="@id/sv_tab2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/store_button"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="View Chart"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

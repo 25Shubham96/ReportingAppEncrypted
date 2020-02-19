@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screenback">
+
+    <!--<Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tb_head"
+        android:background="@color/colorToolbar"
+        tools:targetApi="lollipop">
+    </Toolbar>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Credentials"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Server IP : "
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/tv_info"
+        android:layout_below="@+id/ll"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="14dp"/>
+
+    <EditText
+        android:id="@+id/et_serverip"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_toRightOf="@id/tv_info"
+        android:hint="127.0.0.1"
+        android:text=""
+        android:textColor="#fff"
+        android:textColorHint="#bdbdbd"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter DB Name : "
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/tv_info2"
+        android:layout_below="@id/et_serverip"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="14dp" />
+
+    <EditText
+        android:id="@+id/et_dbname"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_serverip"
+        android:layout_toRightOf="@id/tv_info2"
+        android:hint="Database Name"
+        android:text=""
+        android:textColor="#fff"
+        android:textColorHint="#bdbdbd"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter DB Instance : "
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/tv_info6"
+        android:layout_below="@id/et_dbname"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="14dp" />
+
+    <EditText
+        android:id="@+id/et_dbinstance"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_dbname"
+        android:layout_toRightOf="@id/tv_info6"
+        android:hint="DB Instance"
+        android:text=""
+        android:textColor="#fff"
+        android:textColorHint="#bdbdbd"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter DB Username : "
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/tv_info3"
+        android:layout_below="@id/et_dbinstance"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="14dp"/>
+
+    <EditText
+        android:id="@+id/et_dbUsername"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_dbinstance"
+        android:layout_toRightOf="@id/tv_info3"
+        android:hint="Username"
+        android:text=""
+        android:textColor="#fff"
+        android:textColorHint="#bdbdbd"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Password : "
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/tv_info4"
+        android:layout_below="@id/et_dbUsername"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="14dp"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_dbUsername"
+        android:layout_toRightOf="@id/tv_info4"
+        android:hint="Password"
+        android:text=""
+        android:textColor="#fff"
+        android:textColorHint="#bdbdbd"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Company Name : "
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/tv_info5"
+        android:layout_below="@id/et_password"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="14dp"/>
+
+    <EditText
+        android:id="@+id/et_compName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_info5"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="20sp"
+        android:hint="Company Name"
+        android:text=""
+        android:textColor="#fff"
+        android:textColorHint="#bdbdbd"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:text="Connect"
+        android:background="@drawable/store_button"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#fff"
+        android:textSize="32sp"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:fontFamily="serif"
+        android:layout_below="@id/et_compName"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btn_getip" />
+
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

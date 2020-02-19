@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReceivablesOptions"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img10"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receivables"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/middleLine"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Year Wise"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:gravity="center"
+                android:id="@+id/tv1"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Month Wise"
+                android:layout_toRightOf="@+id/middleLine"
+                android:gravity="center"
+                android:id="@+id/tv2"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:textStyle="italic"/>
+
+            <Button
+                android:id="@+id/btn_ReceBal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv1"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Balance"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_RecePayHab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_ReceBal"
+                android:background="@drawable/button_selector"
+                android:text="Pymnt Habits"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_ReceKPIs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_RecePayHab"
+                android:background="@drawable/button_selector"
+                android:text="KPIs"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_ReceSales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_ReceKPIs"
+                android:background="@drawable/button_selector"
+                android:text="Sales"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:id="@+id/btn_ReceBal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv2"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Balance"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_RecePayHab2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_ReceBal2"
+                android:background="@drawable/button_selector"
+                android:text="Pymnt Habits"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_ReceKPIs2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_RecePayHab2"
+                android:background="@drawable/button_selector"
+                android:text="KPIs"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_ReceSales2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_ReceKPIs2"
+                android:background="@drawable/button_selector"
+                android:text="Sales"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

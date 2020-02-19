@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InventoryOptions"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img10"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inventory"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/middleLine"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_InvenOverVw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Overview"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_InvenByVendr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_InvenOverVw"
+                android:background="@drawable/button_selector"
+                android:text="by Vendor"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_InvenItmCate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_InvenByVendr"
+                android:background="@drawable/button_selector"
+                android:text="Top Category"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_InvenByLoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="by Location"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_InvenByTop30Itm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_InvenByLoc"
+                android:background="@drawable/button_selector"
+                android:text="Top Items"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_InvenByEntryTyp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btn_InvenByTop30Itm"
+                android:background="@drawable/button_selector"
+                android:text="by Entry Type"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

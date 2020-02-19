@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.shubhammundra.fromandto.YtdAnalysis"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp"
+                android:contentDescription="TODO" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YTD Analysis"
+        android:textSize="26sp"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sv"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_yearselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Year/s :"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp" />
+
+            <Button
+                android:id="@+id/btn_selectYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_below="@+id/tv_yearselect"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <!--<TextView
+                android:id="@+id/tv_selectcity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select cities :"
+                android:layout_below="@id/tv_yearselect"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="28dp" />
+
+            <Button
+                android:id="@+id/btn_selectcity"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="28dp"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@+id/tv_selectcity"
+                android:layout_below="@id/btn_selectYear"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"/>-->
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15sp"
+                android:id="@+id/iv_refresh"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/btn_selectYear"
+                android:layout_below="@+id/tv_yearselect"/>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YTD Analysis by Net Sales"
+                android:textSize="18sp"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:layout_below="@id/btn_selectYear"
+                android:layout_centerHorizontal="true"
+                android:textStyle="italic"/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sv_time2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/text"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/tl_myTable1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:id="@+id/tr_tr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_yearmonth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="3dp"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="9dp"
+                                android:paddingLeft="9dp"
+                                android:text="Year-Month"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:id="@+id/tv_netAmt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingTop="3dp"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="9dp"
+                                android:paddingLeft="9dp"
+                                android:text="Net Amt"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_netAmtYTD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingTop="3dp"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="9dp"
+                                android:paddingLeft="9dp"
+                                android:text="Net Amt YTD"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/tv_netAmtLastYTD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="9dp"
+                                android:paddingRight="9dp"
+                                android:paddingTop="3dp"
+                                android:text="Net Amt last YTD"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_ytdindex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingTop="3dp"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="9dp"
+                                android:paddingLeft="9dp"
+                                android:text="YTD index"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/tv_varianceYTD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingTop="3dp"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="9dp"
+                                android:paddingLeft="9dp"
+                                android:text="Variance"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/tv_variancePerYTD"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingTop="3dp"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="9dp"
+                                android:paddingLeft="9dp"
+                                android:text="Variance %"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"/>
+
+
+                        </TableRow>
+                    </TableLayout>
+
+                </RelativeLayout>
+
+                </HorizontalScrollView>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>

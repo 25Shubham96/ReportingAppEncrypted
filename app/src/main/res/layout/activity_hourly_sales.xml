@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screenback"
+    tools:context="com.example.shubhammundra.fromandto.HourlySales">
+
+<!--    <Toolbar
+        android:id="@+id/toolbar"
+        tools:targetApi="lollipop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorToolbar">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back_black_24dp"
+            android:contentDescription="Back" />
+    </Toolbar>-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp"
+                android:contentDescription="Back" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hourly Sales"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_yearselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Year :"
+                android:textStyle="bold"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_yearselect"
+                android:layout_toRightOf="@+id/tv_yearselect"
+                android:layout_marginTop="20dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/background_round">
+            </Spinner>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15sp"
+                android:id="@+id/img3"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/spin_yearselect"/>
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textStyle="italic"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tv_yearselect"
+                android:text="Sales By Hour"
+                android:textSize="17sp"
+                android:fontFamily="serif"
+                android:layout_centerHorizontal="true"/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sv"
+                android:layout_below="@+id/tv1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/tl_myTable">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tr_index">
+
+                            <TextView
+                                android:id="@+id/tv_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:fontFamily="serif"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_netamt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Net Amt"
+                                android:fontFamily="serif"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_avgnetamt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Avg Net Amt"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@id/sv">
+
+                <Button
+                    android:layout_width="300dp"
+                    android:layout_height="75dp"
+                    android:id="@+id/btn_hourchart"
+                    android:textSize="30dp"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:fontFamily="serif"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/store_button"
+                    android:text="View Chart"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReceivableBalance"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_selectYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Year/s : "
+        android:textSize="18sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:fontFamily="serif"/>
+
+    <!--<Button
+        android:id="@+id/btn_selectYear"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:paddingLeft="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="14sp"
+        android:background="@drawable/rect_border"
+        android:layout_toRightOf="@+id/tv_selectYear"
+        android:text="Select"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:textAllCaps="false"
+        android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLay"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@+id/tv_selectYear"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp">
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_selectPostingGrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posting Group/s : "
+        android:textSize="18sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_below="@id/linearLay"
+        android:textColor="#fff"
+        android:fontFamily="serif"/>
+
+    <Button
+        android:id="@+id/btn_selectPostingGrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="14sp"
+        android:background="@drawable/rect_border"
+        android:layout_toRightOf="@+id/tv_selectPostingGrp"
+        android:layout_below="@+id/linearLay"
+        android:text="Select"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:textAllCaps="false"
+        android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+    <TextView
+        android:id="@+id/tv_selectCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Country/s : "
+        android:textSize="18sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_below="@id/btn_selectPostingGrp"
+        android:textColor="#fff"
+        android:fontFamily="serif"/>
+
+    <Button
+        android:id="@+id/btn_selectCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20sp"
+        android:layout_marginRight="10dp"
+        android:textSize="14sp"
+        android:background="@drawable/rect_border"
+        android:layout_toRightOf="@+id/tv_selectCountry"
+        android:layout_below="@+id/btn_selectPostingGrp"
+        android:text="Select"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:textAllCaps="false"
+        android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+    <TextView
+        android:id="@+id/tv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh to view → "
+        android:textSize="18sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        android:layout_below="@id/btn_selectCountry"
+        android:textColor="#fff"
+        android:fontFamily="serif"/>
+
+    <ImageView
+        android:id="@+id/iv_refresh"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5sp"
+        android:layout_toRightOf="@+id/tv_refresh"
+        android:layout_below="@+id/btn_selectCountry"
+        android:src="@drawable/ic_autorenew_white_24dp" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receivable Balance"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:layout_below="@id/tv_refresh"
+        android:textColor="#fff"
+        android:fontFamily="serif"/>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tl_myTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <TableRow
+                    android:id="@+id/tr_index"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rect_border"
+                        android:fontFamily="serif"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="3dp"
+                        android:text="Year"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rect_border"
+                        android:fontFamily="serif"
+                        android:inputType="number"
+                        android:padding="3dp"
+                        android:text="Receivable Balance"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receivable Dues and Overdues"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:layout_below="@id/sv"
+        android:textColor="#fff"
+        android:fontFamily="serif"/>
+
+    <ScrollView
+        android:id="@+id/sv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text2"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tl_myTable2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <TableRow
+                    android:id="@+id/tr_index2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_no2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rect_border"
+                        android:fontFamily="serif"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="3dp"
+                        android:text="Year"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_due"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rect_border"
+                        android:fontFamily="serif"
+                        android:inputType="number"
+                        android:padding="3dp"
+                        android:text="Before due"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_overdue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rect_border"
+                        android:fontFamily="serif"
+                        android:inputType="number"
+                        android:padding="3dp"
+                        android:text="Overdue"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receivable Overdues %"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:layout_below="@id/sv2"
+        android:textColor="#fff"
+        android:fontFamily="serif"/>
+
+    <ScrollView
+        android:id="@+id/sv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text3"
+        android:layout_margin="20dp">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tl_myTable3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <TableRow
+                    android:id="@+id/tr_index3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_no3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rect_border"
+                        android:fontFamily="serif"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="3dp"
+                        android:text="Year"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rect_border"
+                        android:fontFamily="serif"
+                        android:inputType="number"
+                        android:padding="3dp"
+                        android:text="Overdue %"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="75dp"
+            android:id="@+id/btn_ReceBal"
+            android:layout_below="@id/sv3"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:textSize="30dp"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:fontFamily="serif"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/store_button"
+            android:text="View Chart"/>
+
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>

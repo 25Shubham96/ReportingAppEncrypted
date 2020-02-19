@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.shubhammundra.fromandto.StoreOverview"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp"
+                android:contentDescription="TODO" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store Overview"
+        android:textSize="26sp"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/sv"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_yearselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Year/s :"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp" />
+
+            <Button
+                android:id="@+id/btn_selectYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_yearselect"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_storeselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_selectYear"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Store/s :"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/btn_selectStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@+id/tv_storeselect"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_below="@+id/btn_selectYear"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_refresh"
+                android:layout_below="@+id/btn_selectStore"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:text="Refresh to view →"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:fontFamily="serif"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5sp"
+                android:id="@+id/iv_refresh"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/tv_refresh"
+                android:layout_below="@+id/btn_selectStore"/>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quartly Net Sales"
+                android:textSize="18sp"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:layout_below="@id/iv_refresh"
+                android:layout_centerHorizontal="true"
+                android:textStyle="italic"
+                />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/sv_time2"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/text"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/tl_myTable1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:id="@+id/tr_tr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Hrs →\nStore ↓"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:id="@+id/tv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:id="@+id/tv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:id="@+id/tv3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:id="@+id/tv5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv6"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv7"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv8"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv9"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv10"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv11"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv12"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv13"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv14"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv15"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv16"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:id="@+id/tv17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"/>
+
+
+                            <TextView
+                                android:id="@+id/tv18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textSize="16dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv20"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv21"
+                                android:textSize="16dp"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:textStyle="bold"
+                                android:background="@drawable/rect_border"/>
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@+id/sv_time2">
+
+                <Button
+                    android:layout_width="300dp"
+                    android:layout_height="75dp"
+                    android:id="@+id/btn_storeOverviewChart"
+                    android:textSize="30dp"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:fontFamily="serif"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/store_button"
+                    android:text="View Chart"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

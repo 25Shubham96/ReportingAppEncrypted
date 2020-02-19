@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frequency"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ll"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No.of Sales"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_below="@id/barchart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Line was Discounted"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart2"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_below="@id/barchart2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Return Sale"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart3"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

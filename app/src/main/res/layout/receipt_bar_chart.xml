@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_describe"
+        android:text="Receipt Report"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sv_payment"
+        android:layout_below="@+id/tv_describe"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City Wise Sales"
+                android:id="@+id/tv_1"
+                android:layout_marginLeft="20sp"
+                android:textColor="#000"
+                android:layout_marginBottom="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:id="@+id/bc_1"
+                android:layout_below="@+id/tv_1">
+
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Month Wise Sales"
+                android:id="@+id/tv_2"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_below="@id/bc_1"
+                android:textColor="#000"
+                android:layout_marginBottom="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:id="@+id/bc_2"
+                android:layout_below="@id/tv_2">
+
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cashier Wise Sales"
+                android:id="@+id/tv_3"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_below="@id/bc_2"
+                android:textColor="#000"
+                android:layout_marginBottom="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:id="@+id/bc_3"
+                android:layout_below="@id/tv_3">
+
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hour Wise Sales"
+                android:id="@+id/tv_4"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_below="@id/bc_3"
+                android:textColor="#000"
+                android:layout_marginBottom="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:id="@+id/bc_4"
+                android:layout_below="@id/tv_4">
+
+            </com.github.mikephil.charting.charts.BarChart>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/tv_describe"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_scrollup"
+        android:background="@drawable/ic_arrow_drop_up_black_24dp"/>
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_scroll"
+        android:background="@drawable/ic_arrow_drop_down_black_24dp"/>
+
+</RelativeLayout>

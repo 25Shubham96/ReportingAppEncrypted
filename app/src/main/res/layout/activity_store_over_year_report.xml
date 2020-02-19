@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.shubhammundra.fromandto.StrOvrYrReport"
+    android:background="@drawable/screenback">
+
+    <!--<Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tb_head"
+        android:background="@color/colorToolbar"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+    </Toolbar>-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store Over Year"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:textSize="30sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_storeselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Store :"
+                android:textStyle="bold"
+                android:layout_marginTop="20sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginBottom="10sp"
+                android:layout_marginRight="10sp"
+                android:padding="5dp"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_storeselect"
+                android:layout_toRightOf="@+id/tv_storeselect"
+                android:layout_marginTop="25dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/background_round">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/iv_refresh"
+                android:layout_margin="15dp"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/spin_storeselect"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dummy_ll"
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_yearselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Year :"
+                android:textStyle="bold"
+                android:layout_below="@+id/tv_storeselect"
+                android:layout_marginLeft="20sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginRight="10sp"
+                android:padding="5dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_yearselect"
+                android:layout_toRightOf="@+id/tv_yearselect"
+                android:layout_below="@+id/tv_storeselect"
+                android:layout_marginTop="8dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/background_round">
+            </Spinner>
+
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sv"
+                android:layout_below="@+id/tv_yearselect"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/tl_myTable">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tr_index">
+
+                            <TextView
+                                android:id="@+id/tv_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:padding="5dp"
+                                android:text="Month"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Net Amt"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_netamt"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="5dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_profit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:padding="5dp"
+                                android:text="Profit "
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Profit %"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_profitper"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="5dp"/>
+
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btn_StrOvrYrChart"
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                android:padding="15dp"
+                android:textSize="30dp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:layout_marginTop="30sp"
+                android:layout_marginBottom="30sp"
+                android:layout_below="@+id/sv"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/store_button"
+                android:text="View Chart" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

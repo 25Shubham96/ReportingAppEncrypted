@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/screenback">
+
+    <!--<Toolbar
+        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:targetApi="lollipop"
+        android:background="@color/colorToolbar">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back_black_24dp"/>
+
+    </Toolbar>-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp"/>
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discount Type"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:id="@+id/sv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_from"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:text="From"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_startdate"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@id/tv_from"
+                android:padding="4dp"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:hint="Start Date"
+                android:textColorHint="#bdbdbd"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="10sp"
+                android:id="@+id/tv_to"
+                android:fontFamily="serif"
+                android:layout_below="@+id/tv_from"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:text="To"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginLeft="26dp"
+                android:id="@+id/tv_enddate"
+                android:layout_below="@+id/tv_from"
+                android:layout_toRightOf="@id/tv_to"
+                android:background="@drawable/rect_border"
+                android:padding="4dp"
+                android:fontFamily="serif"
+                android:textColor="#fff"
+                android:hint="End Date"
+                android:textColorHint="#BDBDBD"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15sp"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/tv_startdate"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll123"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:id="@+id/sv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_enddate"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/tl_myTable">
+
+                        <TableRow
+                            android:id="@+id/tr_index"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/city"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cities"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+                            <TextView
+                                android:id="@+id/tv_Disc_amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Discount Amount"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_Periodic_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Periodic Discount"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_line_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Line Discount"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_custm_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Customer Discount"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_info_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Infocode Discount"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                            <TextView
+                                android:id="@+id/tv_invoice_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cust_invoice Discount"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/sv_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sv"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/tl_myTable1">
+
+                        <TableRow
+                            android:id="@+id/tr_index1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/city1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cities"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+                            <TextView
+                                android:id="@+id/tv_Disc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Discount %"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sv_next"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp">
+
+                <Button
+                    android:id="@+id/btn_discountTypChart"
+                    android:layout_width="300dp"
+                    android:layout_height="75dp"
+                    android:textSize="30dp"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textAllCaps="false"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/store_button"
+                    android:text="View Chart"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

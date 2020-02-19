@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReceivableBalanceChart"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img11"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receivables"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"/>
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receivable Balance"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/linechart1"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.LineChart>
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_below="@id/linechart1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dues and OverDues"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/linechart2"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.LineChart>
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_below="@id/linechart2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="% Receivable OverDue"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/linechart3"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.LineChart>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

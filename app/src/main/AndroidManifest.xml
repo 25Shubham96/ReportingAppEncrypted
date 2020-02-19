@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.shubhammundra.fromandto">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginPage" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".DisplayDate" />
+        <activity android:name=".DisplayPiechart" />
+        <activity android:name=".ItemCategoryReport" />
+        <activity android:name=".DisplayBarchart" />
+        <activity android:name=".ItemPieChart" />
+        <activity android:name=".StorePieChart" />
+        <activity android:name=".StoreLineChart" />
+        <activity android:name=".ItemLineChart" />
+        <activity android:name=".ReportOption" />
+        <activity android:name=".StaffReport" />
+        <activity android:name=".PaymentsReport" />
+        <activity android:name=".TimeReport" />
+        <activity android:name=".DisplayChart" />
+        <activity android:name=".ConnectionHelper" />
+        <activity android:name=".PaymentBarchart" />
+        <activity android:name=".FrequencyReport" />
+        <activity android:name=".FreqBar" />
+        <activity android:name=".ReceiptReport" />
+        <activity android:name=".ReceiptBarChart" />
+        <activity android:name=".StaffBarchart" />
+        <activity android:name=".DiscountSpecials" />
+        <activity android:name=".DiscSpecChart" />
+        <activity android:name=".ExpenseReport" />
+        <activity android:name=".ExpenseTypChart" />
+        <activity android:name=".IncomeReport" />
+        <activity android:name=".IncomeTypChart" />
+        <activity android:name=".GetCredentials" />
+        <activity android:name=".GetValues" />
+        <activity android:name=".DiscountType" />
+        <activity android:name=".DiscountBarChart" />
+        <activity android:name=".HourlySales" />
+        <activity android:name=".Sales" />
+        <activity android:name=".KPIAnalysis" />
+        <activity android:name=".POSYear" />
+        <activity android:name=".StrOvrYrReport" />
+        <activity android:name=".ViewBarChart" />
+        <activity android:name=".StrOvrYrChart" />
+        <activity android:name=".HourlySalesChart" />
+        <activity android:name=".KPIAnalysisChart" />
+        <activity android:name=".POsYearChart" />
+        <activity android:name=".SalesChart" />
+        <activity android:name=".YtdAnalysis"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".MtdAnalysis" />
+        <activity android:name=".WtdAnalysis" />
+        <activity android:name=".StoreOverview" />
+        <activity android:name=".Receiveable" />
+        <activity android:name=".ReceivableChart" />
+        <activity android:name=".PosPayment" />
+        <activity android:name=".PayByMonth" />
+        <activity android:name=".Tender" />
+        <activity android:name=".PayByCard" />
+        <activity android:name=".DualBarChart" />
+        <activity android:name=".PayByTTnCard" />
+        <activity android:name=".PayByMonthChart" />
+        <activity android:name=".PayByTenderChart" />
+        <activity android:name=".ValueEntryReport" />
+        <activity android:name=".ReceivablesOptions" />
+        <activity android:name=".ReceivableBalance" />
+        <activity android:name=".ReceivablePaymentHabits" />
+        <activity android:name=".ReceivableKPIs" />
+        <activity android:name=".ReceivableSales" />
+        <activity android:name=".ReceivableBalanceChart" />
+        <activity android:name=".ReceivablePaymentHabitsChart" />
+        <activity android:name=".ReceivableKPIsChart" />
+        <activity android:name=".ReceivableBalance2" />
+        <activity android:name=".ReceivablePaymentHabits2" />
+        <activity android:name=".ReceivableKPIs2" />
+        <activity android:name=".ReceivableSales2" />
+        <activity android:name=".ReceivableSalesChart" />
+        <activity android:name=".InventoryOptions" />
+        <activity android:name=".InventryByEntryType" />
+        <activity android:name=".InventryByTopItemCate" />
+        <activity android:name=".InventryByTop30Itm" />
+        <activity android:name=".InventryValueByVendor" />
+        <activity android:name=".InventryValueByLocation" />
+        <activity android:name=".InventryOverview" />
+        <activity android:name=".InventryValueByVendorChart" />
+        <activity android:name=".InventryValueByLocationChart" />
+        <activity android:name=".InventryOverviewChart" />
+        <activity android:name=".StoreOverviewChart" />
+        <activity android:name=".SalesHistory" />
+        <activity android:name=".SQLite.SelectingDatabase"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PayByTTnCard"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Details"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:textSize="30sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Year:"
+                android:textStyle="bold"
+                android:id="@+id/tv_storeselect"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_yearSelect"
+                android:layout_toRightOf="@+id/tv_storeselect"
+                android:layout_marginTop="22dp"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/background_round">
+            </Spinner>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15sp"
+                android:id="@+id/iv_refresh"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/spin_yearSelect"/>
+
+            <TextView
+                android:id="@+id/tv_selectMonths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tender Type/s : "
+                android:textSize="18sp"
+                android:layout_below="@id/tv_storeselect"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:id="@+id/btn_selectTender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:layout_below="@id/tv_storeselect"
+                android:layout_toRightOf="@+id/tv_selectMonths"
+                android:background="@drawable/rect_border"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_selectYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Store/s : "
+                android:textSize="18sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/btn_selectTender"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:id="@+id/btn_selectStore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="20sp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_below="@id/btn_selectTender"
+                android:layout_toRightOf="@+id/tv_selectYear"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sv"
+                android:layout_below="@+id/btn_selectStore"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/tl_myTable">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tr_index">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tender"
+                                android:fontFamily="serif"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_TT"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Year 1"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_currYear"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Year 2"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_preYear"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Amt"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_totalAmt"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/sv">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/middle"
+                    android:layout_centerHorizontal="true">
+
+                    <Button
+                        android:layout_width="300dp"
+                        android:layout_height="75dp"
+                        android:id="@+id/btn_TTnCardChart"
+                        android:textSize="30dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:textColor="#ffffff"
+                        android:textAllCaps="false"
+                        android:background="@drawable/store_button"
+                        android:layout_alignParentBottom="true"
+                        android:text="View Chart"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

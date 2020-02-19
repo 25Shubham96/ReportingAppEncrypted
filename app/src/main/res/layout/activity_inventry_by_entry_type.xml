@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InventryByEntryType"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entry Type"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_selectYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Year/s : "
+                android:textSize="18sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:id="@+id/btn_selectYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@+id/tv_selectYear"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_selectPostingGrp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posting Group/s : "
+                android:textSize="18sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_below="@id/btn_selectYear"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:id="@+id/btn_selectPostingGrp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@+id/tv_selectPostingGrp"
+                android:layout_below="@+id/btn_selectYear"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_selectCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item Category : "
+                android:textSize="18sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_below="@id/btn_selectPostingGrp"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:id="@+id/btn_selectItemCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20sp"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@+id/tv_selectCountry"
+                android:layout_below="@+id/btn_selectPostingGrp"
+                android:text="Select"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_arrow_drop_down_white_24dp"/>
+
+            <TextView
+                android:id="@+id/tv_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Refresh to view → "
+                android:textSize="18sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:layout_below="@id/btn_selectItemCategory"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5sp"
+                android:layout_toRightOf="@+id/tv_refresh"
+                android:layout_below="@+id/btn_selectItemCategory"
+                android:src="@drawable/ic_autorenew_white_24dp" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inventory by Entry Type"
+                android:textSize="17sp"
+                android:layout_centerHorizontal="true"
+                android:textStyle="italic"
+                android:layout_below="@id/tv_refresh"
+                android:textColor="#fff"
+                android:fontFamily="serif"/>
+
+            <ScrollView
+                android:id="@+id/sv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/tl_myTable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true">
+
+                        <TableRow
+                            android:id="@+id/tr_index"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="3dp"
+                                android:text="Year"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="3dp"
+                                android:text="Purchase"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="3dp"
+                                android:text="Sale"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="3dp"
+                                android:text="Positive Adjmt."
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="3dp"
+                                android:text="Negative Adjmt."
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="3dp"
+                                android:text="Transfer"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:paddingBottom="3dp"
+                                android:paddingLeft="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingTop="3dp"
+                                android:text="Consumption"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <!--<TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:inputType="number"
+                                android:padding="3dp"
+                                android:text="Output"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:inputType="number"
+                                android:padding="3dp"
+                                android:text=""
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:inputType="number"
+                                android:padding="3dp"
+                                android:text="Assembly Consumption"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rect_border"
+                                android:fontFamily="serif"
+                                android:inputType="number"
+                                android:padding="3dp"
+                                android:text="Assembly Output"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />-->
+
+                        </TableRow>
+
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <!--<Button
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                android:id="@+id/btn_InventoryByEntryType"
+                android:layout_below="@id/sv"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:textSize="30dp"
+                android:textColor="#fff"
+                android:textAllCaps="false"
+                android:fontFamily="serif"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/store_button"
+                android:text="View Chart"/>-->
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

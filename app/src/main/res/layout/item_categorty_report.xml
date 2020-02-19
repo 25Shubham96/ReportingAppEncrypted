@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textSize="30sp"
+        android:id="@+id/tv_describe"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_from"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:text="From"
+                android:fontFamily="serif"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_startdate1"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@id/tv_from"
+                android:padding="4dp"
+                android:textColor="#fff"
+                android:hint="Start Date"
+                android:textColorHint="#bdbdbd"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tv_to"
+                android:layout_below="@+id/tv_from"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:text="To"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="26dp"
+                android:layout_below="@id/tv_from"
+                android:id="@+id/tv_enddate1"
+                android:layout_toRightOf="@id/tv_to"
+                android:padding="4dp"
+                android:background="@drawable/rect_border"
+                android:textColor="#fff"
+                android:hint="End Date"
+                android:textColorHint="#bdbdbd"
+                android:fontFamily="serif"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15sp"
+                android:id="@+id/iv_refresh"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/tv_startdate1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Store No :"
+                android:textStyle="bold"
+                android:id="@+id/tv_storeselect"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/tv_to"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_storeselect"
+                android:layout_toRightOf="@+id/tv_storeselect"
+                android:layout_below="@+id/tv_enddate1"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/background_round">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/ll11"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/sv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_storeselect"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/tl_myTable1">
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tr_index1">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Code"
+                                android:id="@+id/tv_no1"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Description"
+                                android:id="@+id/tv_name1"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Net Amt"
+                                android:id="@+id/tv_date1"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:padding="3dp"/>
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/sv"
+                android:gravity="center"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/store"
+                    android:layout_marginRight="35dp"
+                    android:orientation="vertical"
+                    android:layout_toLeftOf="@+id/middle">
+
+                    <Button
+                        android:id="@+id/btn_piechart1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/ic_bar_white_24dp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bar chart"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:textColor="#bdbd"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/middle"
+                    android:orientation="vertical"
+                    android:layout_centerHorizontal="true">
+
+                    <Button
+                        android:id="@+id/btn_itemLinechart"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/ic_timeline_black_24dp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Line chart"
+                        android:fontFamily="serif"
+                        android:textColor="#bdbd"
+                        android:gravity="center"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@+id/middle"
+                    android:layout_marginLeft="35dp">
+
+                    <Button
+                        android:id="@+id/btn_itemPiechart"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/ic_donut_large_white_24dp"
+                        android:fontFamily="serif"
+                        android:layout_marginLeft="10dp"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pie chart"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="serif"
+                        android:textColor="#bdbd"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

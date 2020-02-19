@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screenback">
+
+    <!--<Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tb_head"
+        android:background="@color/colorToolbar"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+    </Toolbar>-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spec Discount"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_describe"
+        android:textSize="30sp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_from"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:text="From"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_startdate"
+                android:fontFamily="serif"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@id/tv_from"
+                android:padding="4dp"
+                android:textColor="#fff"
+                android:textColorHint="#bdbdbd"
+                android:hint="Start Date"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="10sp"
+                android:id="@+id/tv_to"
+                android:layout_below="@id/tv_from"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:text="To"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_enddate"
+                android:layout_toRightOf="@id/tv_to"
+                android:layout_below="@+id/tv_from"
+                android:background="@drawable/rect_border"
+                android:padding="4dp"
+                android:textColor="#fff"
+                android:textColorHint="#bdbdbd"
+                android:fontFamily="serif"
+                android:hint="End Date"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15sp"
+                android:id="@+id/iv_refresh"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/tv_startdate"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Store No :"
+                android:textStyle="bold"
+                android:id="@+id/tv_storeselect"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/tv_to"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_storeselect"
+                android:layout_toRightOf="@+id/tv_storeselect"
+                android:layout_below="@+id/tv_enddate"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/background_round">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sv"
+                android:layout_below="@+id/tv_storeselect"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/tl_myTable">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tr_index">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Discount Type"
+                                android:fontFamily="serif"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_pos"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Net Amount"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_netamt"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Discount % "
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:id="@+id/tv_avgnetamt"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/btn_SpecialDiscChart"
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                android:textSize="30dp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:layout_marginTop="30sp"
+                android:layout_marginBottom="20sp"
+                android:layout_below="@+id/sv"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/store_button"
+                android:text="View Chart"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

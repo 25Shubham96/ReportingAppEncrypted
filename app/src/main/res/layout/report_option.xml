@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img10"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="59dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ebtlogo1"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/middleLine"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_storeReport"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Store"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_categoryReport"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Category"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_staffReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Staff"
+                android:fontFamily="@font/ubuntu_bold"
+                android:layout_below="@+id/btn_storeReport"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_timeReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/btn_categoryReport"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Time"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_paymentsReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_below="@+id/btn_staffReport"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Payment"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_frequencyReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/btn_timeReport"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Frequency"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_ReceiptReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_below="@+id/btn_paymentsReport"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Receipt"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_DiscountSpeReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_frequencyReport"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/button_selector"
+                android:text="Special Disc"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_DiscountReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_ReceiptReport"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Disc Type"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_ExpenseReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_DiscountSpeReport"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Expense"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_IncomeReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_DiscountReport"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Income"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_StrOverYrReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_ExpenseReport"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Store Over Yr"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_HourlySalesReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_IncomeReport"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Hourly Sales"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_KPIAnalysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_StrOverYrReport"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="KPI Analysis"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_POSYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_HourlySalesReport"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="POS Year"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_SalesReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_KPIAnalysis"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/button_selector"
+                android:text="Sales"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_StrOverviewReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_POSYear"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Store Overview"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_YTDReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_SalesReport"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/button_selector"
+                android:text="YTD Analysis"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_MTDReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_StrOverviewReport"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_selector"
+                android:text="MTD Analysis"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_WTDReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_YTDReport"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/button_selector"
+                android:text="WTD Analysis"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <!--<Button
+                android:id="@+id/btn_ReceivableReport"
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_WTDReport"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_selector"
+                android:text="Receivable"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>-->
+
+            <Button
+                android:id="@+id/btn_posPaymentReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_MTDReport"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_selector"
+                android:text="POS Payment"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_valueEntryReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_WTDReport"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/button_selector"
+                android:text="Value Entry"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_receivablesReporting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_posPaymentReport"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/button_selector"
+                android:text="Receivables"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_inventoryReporting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_valueEntryReport"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/middleLine"
+                android:background="@drawable/button_selector"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Inventory"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_salesHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btn_receivablesReporting"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/button_selector"
+                android:text="Sales History"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

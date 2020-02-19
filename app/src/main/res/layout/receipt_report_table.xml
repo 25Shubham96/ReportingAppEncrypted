@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/screenback">
+
+    <!--<Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tb"
+        android:background="@color/colorToolbar"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/img_bckrecetab"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back_black_24dp"/>
+    </Toolbar>-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb_head"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img_bckrecetab"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/receipt_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receipt Report"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+
+    <Spinner
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/spin_filter"
+        android:background="@drawable/filter"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentEnd="true">
+    </Spinner>
+
+    <ScrollView
+        android:id="@+id/sv1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_from"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:text="From"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_startdate"
+                android:background="@drawable/rect_border"
+                android:layout_toRightOf="@id/tv_from"
+                android:padding="4dp"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:hint="Start Date"
+                android:textColorHint="#bdbdbd"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/tv_to"
+                android:fontFamily="serif"
+                android:layout_below="@+id/tv_from"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:text="To"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26sp"
+                android:layout_marginRight="20sp"
+                android:layout_marginBottom="20sp"
+                android:id="@+id/tv_enddate"
+                android:layout_toRightOf="@id/tv_to"
+                android:layout_below="@+id/tv_from"
+                android:background="@drawable/rect_border"
+                android:padding="4dp"
+                android:fontFamily="serif"
+                android:textColor="#fff"
+                android:hint="End Date"
+                android:textColorHint="#BDBDBD"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="15sp"
+                android:src="@drawable/ic_autorenew_white_24dp"
+                android:layout_toRightOf="@+id/tv_startdate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:text="Select Store No :"
+                android:textStyle="bold"
+                android:id="@+id/tv_storeselect"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/tv_to"/>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spin_storeselect"
+                android:layout_toRightOf="@+id/tv_storeselect"
+                android:layout_below="@+id/tv_enddate"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/background_round">
+            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sv"
+                    android:layout_below="@+id/tv_storeselect"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_cws"
+                            android:text="No. of sales in cities"
+                            android:textColor="#FFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold"/>
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/tl_myReceiptTable1"
+                        android:layout_below="@+id/tv_cws">
+
+                        <TableRow
+                            android:id="@+id/tr_index"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/city"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cities"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+                            <TextView
+                                android:id="@+id/tv_sales"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No. of Sales Entry"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                        </TableRow>
+                    </TableLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_mws"
+                            android:text="No. of sales in month"
+                            android:textColor="#FFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:layout_below="@+id/tl_myReceiptTable1"
+                            android:layout_marginTop="30dp"/>
+
+                        <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/tl_myReceiptTable2"
+                        android:layout_below="@+id/tv_mws">
+
+                        <TableRow
+                            android:id="@+id/tr_index2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/Receipt_month"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Months"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#fff"
+                                android:fontFamily="serif"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+                            <TextView
+                                android:id="@+id/tv_sales2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No. of Sales Entry"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:fontFamily="serif"
+                                android:textColor="#fff"
+                                android:background="@drawable/rect_border"
+                                android:paddingBottom="3dp"
+                                android:paddingRight="8dp"
+                                android:paddingLeft="3dp"
+                                android:paddingTop="3dp"/>
+
+                        </TableRow>
+                    </TableLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_sbc"
+                            android:text="No. of sales by cashier"
+                            android:textColor="#FFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:layout_below="@+id/tl_myReceiptTable2"
+                            android:layout_marginTop="30dp"
+                            />
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/tl_myReceiptTable3"
+                            android:layout_below="@+id/tv_sbc">
+
+                            <TableRow
+                                android:id="@+id/tr_index3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/Receipt_bycashier"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cashier"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#fff"
+                                    android:fontFamily="serif"
+                                    android:background="@drawable/rect_border"
+                                    android:paddingBottom="3dp"
+                                    android:paddingRight="8dp"
+                                    android:paddingLeft="3dp"
+                                    android:paddingTop="3dp"/>
+                                <TextView
+                                    android:id="@+id/tv_sales3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="No. of Sales Entry"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="serif"
+                                    android:textColor="#fff"
+                                    android:background="@drawable/rect_border"
+                                    android:paddingBottom="3dp"
+                                    android:paddingRight="8dp"
+                                    android:paddingLeft="3dp"
+                                    android:paddingTop="3dp"/>
+
+                            </TableRow>
+                        </TableLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_sbh"
+                            android:text="No.Of Sales By Hour"
+                            android:textColor="#FFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:layout_below="@+id/tl_myReceiptTable3"
+                            android:layout_marginTop="30dp" />
+
+                        <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/tl_myReceiptTable4"
+                            android:layout_below="@+id/tv_sbh">
+
+                            <TableRow
+                                android:id="@+id/tr_index4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/Receipt_byhour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hours"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#fff"
+                                    android:fontFamily="serif"
+                                    android:background="@drawable/rect_border"
+                                    android:paddingBottom="3dp"
+                                    android:paddingRight="8dp"
+                                    android:paddingLeft="3dp"
+                                    android:paddingTop="3dp"/>
+                                <TextView
+                                    android:id="@+id/tv_sales4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="No. of Sales Entry"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="serif"
+                                    android:textColor="#fff"
+                                    android:background="@drawable/rect_border"
+                                    android:paddingBottom="3dp"
+                                    android:paddingRight="8dp"
+                                    android:paddingLeft="3dp"
+                                    android:paddingTop="3dp"/>
+
+                            </TableRow>
+                        </TableLayout>
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/btn_myReceiptchart"
+                android:layout_width="300dp"
+                android:layout_height="75dp"
+                android:textSize="30dp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/sv"
+                android:background="@drawable/store_button"
+                android:text="View Chart"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="30dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

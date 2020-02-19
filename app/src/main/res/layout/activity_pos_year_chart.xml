@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.shubhammundra.fromandto.POsYearChart"
+    android:background="@drawable/screenback">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp"
+                android:contentDescription="TODO" />
+        </Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/toolbar_dropshadow"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POS Year"
+        android:textSize="26sp"
+        android:textColor="#fff"
+        android:fontFamily="serif"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ll"
+        android:layout_height="wrap_content"
+        android:id="@+id/sv_POS">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Net Sales"
+                android:textStyle="italic"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart1"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv1"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_below="@id/barchart1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:textStyle="italic"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart2"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_below="@id/barchart2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profit %"
+                android:textStyle="italic"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart3"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_below="@id/barchart3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discount %"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart4"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv4"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_below="@id/barchart4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cost"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart5"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_below="@id/barchart5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unique Customers"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart6"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv6"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_below="@id/barchart6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No. of Receipts"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart7"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv7"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_below="@id/barchart7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avg. Net Amount per Receipt"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:textColor="#fff"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="serif"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barchart8"
+                android:background="@drawable/background"
+                android:layout_below="@id/tv8"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true">
+            </com.github.mikephil.charting.charts.BarChart>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
